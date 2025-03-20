@@ -2,7 +2,7 @@ from tkinter import *
 import json
 from difflib import get_close_matches
 from tkinter import messagebox
-import pyttsx3
+import pyttsx3 
 
 engine=pyttsx3.init()##creating instance of engine class
 
@@ -14,7 +14,7 @@ engine.setProperty('voices',voice[0].id)
 
 ##funtionpart
 def search():
-    data=json.load(open('data.json'))
+    data=json.load(open('data/data.json'))
     word=enterwordenrty.get()
     word=word.lower()
     
@@ -81,7 +81,7 @@ root.geometry('1000x626+100+30')
 root.title('Talking Dictionary')
 root.resizable(0,0)
 
-bgImage=PhotoImage(file='bg.png')
+bgImage=PhotoImage(file='images/bg.png')
 bgLabel=Label(root,image=bgImage)
 bgLabel.place(x=0,y=0)
 
@@ -91,11 +91,11 @@ enterwordlabel.place(x=530,y=20)
 enterwordenrty=Entry(root,font=('arial',23,'bold'),justify=CENTER,bd=5,relief=GROOVE)
 enterwordenrty.place(x=510,y=80)
 
-searchimage=PhotoImage(file='search.png')
+searchimage=PhotoImage(file='images/search.png')
 searchbutton=Button(root,image=searchimage,bd=0,bg='whitesmoke',cursor='hand2',activebackground='whitesmoke',command=search)
 searchbutton.place(x=620,y=150)
 
-micimage=PhotoImage(file='mic.png')
+micimage=PhotoImage(file='images/mic.png')
 micbutton=Button(root,image=micimage,bd=0,bg='whitesmoke',activebackground='whitesmoke',cursor='hand2',command=wordaudio)
 micbutton.place(x=710,y=153)
 
@@ -105,16 +105,16 @@ meaninglabel.place(x=580,y=240)
 textarea=Text(root,width=34,height=8,font=('arial',18,'bold'),bd=5,relief=GROOVE)
 textarea.place(x=460,y=300)
 
-audioimage=PhotoImage(file='microphone.png')
+audioimage=PhotoImage(file='images/microphone.png')
 audioButton=Button(root,image=audioimage,bd=0,bg='whitesmoke',activebackground='whitesmoke',cursor='hand2',command=meaningaudio)
 audioButton.place(x=530,y=555)
 
-clearimage=PhotoImage(file='clear.png')
+clearimage=PhotoImage(file='images/clear.png')
 clearButton=Button(root,image=clearimage,bd=0,bg='whitesmoke',activebackground='whitesmoke',cursor='hand2',command=clear)
 clearButton.place(x=660,y=555)
 
 
-exitimage=PhotoImage(file='exit.png')
+exitimage=PhotoImage(file='images/exit.png')
 exitButton=Button(root,image=exitimage,bd=0,bg='whitesmoke',activebackground='whitesmoke',cursor='hand2',command=iexit)
 exitButton.place(x=790,y=555)
 
