@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+
+# Installer logs
+pip-log.txt
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# tkinter/ttk bootstrap image cache or temp
+*.png
+*.jpg
+*.jpeg
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# IDEs/editors
+.vscode/
+.idea/
+*.swp
