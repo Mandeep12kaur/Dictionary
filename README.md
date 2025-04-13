@@ -1,42 +1,84 @@
-# Installation Guide
+
+# Talking Dictionary App
 
 ## Overview
-This project requires the following dependencies to run:
-- `tkinter` (for GUI development)
-- `pyttsx3` (for text-to-speech functionality)
+This project is a modern graphical dictionary application with voice support, autocomplete, and theme customization. Built using Python and `ttkbootstrap`, it offers a clean UI with a native feel across platforms.
 
-Some modules used in the project (`json`, `difflib`) are built into Python and do not require installation.
+### ✨ Features
+- Search for word meanings
+- Text-to-speech for both word and meaning
+- Autocomplete suggestions as you type
+- Dark/light theme support using `ttkbootstrap`
+- Keyboard shortcuts:
+  - `Ctrl + Enter` – Search
+  - `Esc` – Clear
+  - `Ctrl + Q` – Exit
 
-## Installation Steps
+## 🛠️ Requirements
 
-### 1. Clone or Download the Repository
-If you haven't already, clone this repository or download the files.
+### Python Packages
+- `pyttsx3` – Text-to-speech engine
+- `ttkbootstrap` – Enhanced UI theming based on ttk
+- `tkinter` – Built-in GUI library (comes with most Python installations)
+
+Modules like `json`, `difflib`, and `os` are part of Python’s standard library and need no installation.
+
+## 🔧 Installation Steps
+
+### 1. Clone the Repository
 ```bash
 git clone <repository_url>
 cd <project_directory>
 ```
 
 ### 2. Install Dependencies
-Run the following command to install required packages:
+Install required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
+Your `requirements.txt` should contain:
+```
+pyttsx3
+ttkbootstrap
+```
+
 ### 3. Run the Application
-After installation, execute the Python script to start the application:
+Start the app:
 ```bash
 python main.py
 ```
-(Replace `main.py` with the actual filename of your script.)
 
-## Notes
-- `tkinter` is included with most Python distributions, so installation might not be necessary.
-- Ensure Python is installed and `pip` is up to date (`pip install --upgrade pip`).
+## 🧠 Notes
+- You can change the theme in `main.py` by modifying:
+  ```python
+  root = tb.Window(themename="darkly")  # Options: "litera", "superhero", etc.
+  ```
+- `tkinter` usually comes preinstalled with Python.
+- Use Python ≥ 3.7 for best compatibility.
 
-## Troubleshooting
-- If `pyttsx3` doesn't work on your system, try installing additional dependencies:
+## 🛠️ Troubleshooting
+
+- If `pyttsx3` throws errors:
   ```bash
   pip install pypiwin32 pyobjc
   ```
-  (Windows users may need `pypiwin32`, and macOS users may need `pyobjc`).
-- If you encounter errors, check the package documentation or reinstall dependencies.
+  *(Windows: `pypiwin32`, macOS: `pyobjc`)*
+
+- For missing GUI components, ensure `tkinter` is available on your Python installation:
+  ```bash
+  sudo apt install python3-tk  # Ubuntu/Debian
+  ```
+
+## 📁 Project Structure
+```
+project/
+│
+├── main.py
+├── dictionary_logic.py
+├── data/
+│   └── data.json
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
